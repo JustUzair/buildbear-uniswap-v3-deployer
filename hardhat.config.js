@@ -12,7 +12,7 @@ module.exports = {
     hardhat: {},
     buildbear: {
       url: process.env.BUILDBEAR_RPC_URL,
-      accounts: [process.env.MNEMONIC],
+      accounts: { mnemonic: process.env.MNEMONIC, count: 1 },
     },
   },
 };
