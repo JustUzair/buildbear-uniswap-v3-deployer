@@ -30,14 +30,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-foundry-
 
-      # Cache build artifacts
-      - name: Cache build artifacts
-        uses: actions/cache@v3
-        with:
-          path: $HOME/.config/.foundry/bin
-          key: ${{ runner.os }}-forge-${{ hashFiles('foundry/Cargo.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-forge-
+      #   # Cache build artifacts
+      #   - name: Cache build artifacts
+      #     uses: actions/cache@v3
+      #     with:
+      #       path: $HOME/.config/.foundry/bin
+      #       key: ${{ runner.os }}-forge-${{ hashFiles('foundry/Cargo.toml') }}
+      #       restore-keys: |
+      #         ${{ runner.os }}-forge-
 
       - name: Clone Foundry repository
         run: |
@@ -53,14 +53,14 @@ jobs:
           fi
         shell: bash
 
-      - name: Build Foundry from source
-        run: |
-          cd foundry
-          cargo build
-          mkdir -p $HOME/.config/.foundry/bin
-          cp target/debug/forge $HOME/.config/.foundry/bin/
-          echo "PATH=$HOME/.config/.foundry/bin:$PATH" >> $GITHUB_ENV
-        shell: bash
+      #   - name: Build Foundry from source
+      #     run: |
+      #       cd foundry
+      #       cargo build
+      #       mkdir -p $HOME/.config/.foundry/bin
+      #       cp target/debug/forge $HOME/.config/.foundry/bin/
+      #       echo "PATH=$HOME/.config/.foundry/bin:$PATH" >> $GITHUB_ENV
+      #     shell: bash
 
       - name: Make bbOut dir
         run: mkdir bbOut
