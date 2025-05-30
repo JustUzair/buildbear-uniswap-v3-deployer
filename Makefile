@@ -8,12 +8,9 @@ install:
 	@echo "Installing dependencies..."
 	npm ci
 
-deploy: install build
-	@echo "Deploying contract..."
-	PRIVATE_KEY := $(shell cast wallet private-key "$(MNEMONIC)")
-	export PRIVATE_KEY
+deploy: install
 	npx hardhat tokamak-uniswap-v3-deploy --network $(BUILDBEAR_RPC_URL)
-exe: install build deploy
+exe: install deploy
 	@echo "All commands executed successfully"
 
 

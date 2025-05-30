@@ -11,8 +11,8 @@ module.exports = {
   networks: {
     hardhat: {},
     buildbear: {
-      url: process.env.BUILDBEAR_RPC,
-      accounts: [process.env.PRIVATE_KEY],
+      url: process.env.BUILDBEAR_RPC_URL,
+      accounts: [process.env.MNEMONIC],
     },
   },
 };
