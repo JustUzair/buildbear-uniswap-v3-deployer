@@ -15,20 +15,20 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
+      #   - name: Install Rust
+      #     uses: actions-rs/toolchain@v1
+      #     with:
+      #       toolchain: stable
+      #       override: true
 
-      # Cache Foundry repository
-      - name: Cache Foundry repository
-        uses: actions/cache@v3
-        with:
-          path: foundry
-          key: ${{ runner.os }}-foundry-${{ hashFiles('**/foundry/.gitmodules') }}
-          restore-keys: |
-            ${{ runner.os }}-foundry-
+      #   # Cache Foundry repository
+      #   - name: Cache Foundry repository
+      #     uses: actions/cache@v3
+      #     with:
+      #       path: foundry
+      #       key: ${{ runner.os }}-foundry-${{ hashFiles('**/foundry/.gitmodules') }}
+      #       restore-keys: |
+      #         ${{ runner.os }}-foundry-
 
       #   # Cache build artifacts
       #   - name: Cache build artifacts
@@ -39,12 +39,12 @@ jobs:
       #       restore-keys: |
       #         ${{ runner.os }}-forge-
 
-      - name: Clone Foundry repository
-        run: |
-          if [ ! -d "foundry" ]; then
-            git clone https://github.com/BuildBearLabs/foundry.git
-          fi
-        shell: bash
+      #   - name: Clone Foundry repository
+      #     run: |
+      #       if [ ! -d "foundry" ]; then
+      #         git clone https://github.com/BuildBearLabs/foundry.git
+      #       fi
+      #     shell: bash
 
       - name: Clone Hardhat-BuildBear
         run: |
