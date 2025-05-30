@@ -52,8 +52,6 @@ jobs:
           git clone https://github.com/BuildBearLabs/Hardhat-BuildBear.git
           fi
         shell: bash
-      - name: Install dependencies
-        run: npm ci
 
       - name: Build Foundry from source
         run: |
@@ -64,23 +62,9 @@ jobs:
           echo "PATH=$HOME/.config/.foundry/bin:$PATH" >> $GITHUB_ENV
         shell: bash
 
-      - name: Show Forge version
-        run: forge --version
-
       - name: Make bbOut dir
         run: mkdir bbOut
         shell: bash
-
-      - name: Derive private key from mnemonic
-        shell: bash
-        env:
-          # ensure cast is available
-          PATH: $HOME/.config/.foundry/bin:$PATH
-        run: |
-          echo "Deriving private key from your mnemonic…"
-          DERIVED_PK=$(cast wallet private-key "$(MNEMONIC)")
-          # override MNEMONIC so Makefile’s --mnemonics="$(MNEMONIC)" picks up the private key
-          echo "MNEMONIC=${DERIVED_PK}" >> $GITHUB_ENV
 
       - name: test_ci
         uses: BuildBearLabs/buildbear_x_action@feat/modify-payload-with-new-api
@@ -96,4 +80,3 @@ jobs:
           buildbear-token: "f0e3ecb8f-c67f-42dd-b5e3-32780dfeac08"
         env:
           API_KEY: "f0e3ecb8f-c67f-42dd-b5e3-32780dfeac08"
-          MNEMONIC: $(MNEMONIC)
