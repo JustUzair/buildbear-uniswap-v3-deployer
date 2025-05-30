@@ -1,0 +1,45 @@
+{
+  "deploymentId": "cf0da5b-15345224696-10-1",
+  "projectId": "f03e26fd-42a0-4d95-b91e-aa0ed5d732fe",
+  "commitHash": "cf0da5b7dab2e33b7adf050de111eefc36226be4",
+  "author": "JustUzair",
+  "status": "failed",
+  "branch": "ci/cd",
+  "actionUrl": "https://github.com/JustUzair/buildbear-uniswap-v3-deployer/actions/runs/15345224696",
+  "deployment": [
+    {
+      "chainId": 1,
+      "rpcUrl": "https://rpc.test.buildbear.io/buildbear-uniswap-v3-deployer-cf0da5b-e5da92",
+      "sandboxId": "buildbear-uniswap-v3-deployer-cf0da5b-e5da92",
+      "transactions": []
+    }
+  ],
+  "createdAt": "2025-05-30T10:57:15.068Z",
+  "testCasesStatus": { "error": 0, "success": 0, "skipped": 0, "failed": 0 },
+  "testCases": [],
+  "logs": [],
+  "project": {
+    "settings": {
+      "notificationChannels": {
+        "slack": { "enabled": false, "webhookUrl": "" }
+      },
+      "projectType": "foundry"
+    },
+    "projectId": "f03e26fd-42a0-4d95-b91e-aa0ed5d732fe",
+    "projectName": "buildbear-uniswap-v3-deployer",
+    "gitUrl": "https://github.com/JustUzair/buildbear-uniswap-v3-deployer",
+    "orgName": "JustUzair",
+    "repoName": "buildbear-uniswap-v3-deployer",
+    "deployments": [
+      "74c7d68-15344539973-4-1",
+      "336e43c-15344779957-5-1",
+      "d017999-15345024621-7-1",
+      "4a735f9-15344959331-6-1",
+      "1734fa8-15345145991-8-1",
+      "dd191bf-15345168756-9-1",
+      "cf0da5b-15345224696-10-1"
+    ],
+    "status": "live",
+    "createdAt": "2025-05-30T10:16:29.479Z"
+  }
+}
