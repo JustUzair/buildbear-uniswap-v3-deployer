@@ -1,6 +1,5 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 
-require("uniswap-v3-deploy-plugin");
 require("hardhat-deploy");
 require("@tokamak-network/tokamak-uniswap-v3-deploy");
 require("dotenv").config();
