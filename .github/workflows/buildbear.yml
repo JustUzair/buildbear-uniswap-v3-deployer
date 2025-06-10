@@ -39,4 +39,6 @@ jobs:
             ]
 
           deploy-command: "make exe"
-          buildbear-token: "${{secrets.CICD_BUILDBEAR_TOKEN}}"
+          buildbear-token: "c2462524-84f0-46b5-b0a3-856741c961df"
+        env:
+          API_KEY: "c2462524-84f0-46b5-b0a3-856741c961df"
